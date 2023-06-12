@@ -1,0 +1,7 @@
+- domain: lmbussit.leemanpaper.com
+  httpOnly: false
+  name: oauthToken
+  path: /
+  sameSite: Lax
+  secure: false
+  value: YWQxZDlhNWYtZTI1Ny00N2RlLTk5N2MtNzQ1ZDQzNGE4NmEw
