@@ -10,10 +10,11 @@ class TestLogin:
 
     def setup(self):
         option = webdriver.ChromeOptions()
+        # option.debugger_address="127.0.0.1:9222"
         option.add_experimental_option("detach", True)  # 不自动关闭浏览器
         self.driver = webdriver.Chrome(options=option)
         self.driver.maximize_window()
-        self.driver.get("http://lmbussit.leemanpaper.com/main/login.html")
+        self.driver.get("http://lmbusuat.leemanpaper.com/main/login.html")
         self.driver.implicitly_wait(5)
         self.driver.find_element(By.ID, "_easyui_textbox_input1").send_keys("LM032451")
         self.driver.find_element(By.ID, "_easyui_textbox_input2").send_keys("L123456")
@@ -51,7 +52,7 @@ class TestLogin:
         新增预约单
         """
         self.driver.find_element(By.CSS_SELECTOR,'li:nth-child(10) .textbox.combo .textbox-addon.textbox-addon-right').click()
-        self.driver.find_element(By.ID,"purchaseType_easyui_combobox_i6_7").click()
+        self.driver.find_element(By.ID,"purchaseType_easyui_combobox_i6_2").click()
         """
         下拉框选项
         purchaseType_easyui_combobox_i6_1 : 国废采购
@@ -60,23 +61,20 @@ class TestLogin:
         purchaseType_easyui_combobox_i6_4 : 木粉采购
         purchaseType_easyui_combobox_i6_5 : 木浆采购
         purchaseType_easyui_combobox_i6_6 : 辅料采购
-        purchaseType_easyui_combobox_i6_7 : 燃料采购
         """
-        self.driver.find_element(By.ID,'_easyui_textbox_input15').send_keys("FUELGD001")     #选择供应商
+        self.driver.find_element(By.ID,'_easyui_textbox_input15').send_keys("A0003")     #选择供应商
         sleep(1)
         self.driver.find_element(By.CSS_SELECTOR,'#saveForm > ul > li:nth-child(8) > span > span').click()        #送货日期
         self.driver.find_element(By.CSS_SELECTOR,'body > div:nth-child(27) > div > div.datebox-button > table > tbody > tr > td:nth-child(1) > a').click()
         self.driver.find_element(By.CSS_SELECTOR,'#saveForm > ul > li:nth-child(9) > span > span > a').click()      #到厂日期
         self.driver.find_element(By.CSS_SELECTOR,'body > div:nth-child(28) > div > div.datebox-button > table > tbody > tr > td:nth-child(1) > a').click()
         self.driver.find_element(By.CSS_SELECTOR,'.datagrid-toolbar td:nth-child(1)').click()       #新增明细
-        self.driver.find_element(By.CSS_SELECTOR,'[field="purchaseOrder"] .textbox-addon.textbox-addon-right').click()      #选择PO
-        sleep(1)
+        self.driver.find_element(By.CSS_SELECTOR,'[field="originCode"] .textbox-addon.textbox-addon-right').click()    #选择产地
         self.driver.find_element(By.ID,"datagrid-row-r13-1-0").click()
-        self.driver.find_element(By.CSS_SELECTOR,'[field="purchaseId"] .textbox-addon.textbox-addon-right').click()      #选择采购员
-        self.driver.find_element(By.ID,"datagrid-row-r14-1-0").click()
-        self.driver.find_element(By.ID,"_easyui_textbox_input25").send_keys("1")        #车数
-        self.driver.find_element(By.ID, "_easyui_textbox_input26").send_keys("2")       #包数
-        self.driver.find_element(By.ID,"_easyui_textbox_input27").send_keys("55")      #吨数
+        self.driver.find_element(By.ID,'_easyui_textbox_input26').send_keys("ZB0003")      #选择料号
+        sleep(1)
+        self.driver.find_element(By.ID,"_easyui_textbox_input27").send_keys("1")        #车数
+        self.driver.find_element(By.ID,"_easyui_textbox_input28").send_keys("111")      #吨数
         self.driver.find_element(By.CSS_SELECTOR,'[field="deliveryCarType"] .textbox-addon.textbox-addon-right').click()        #选择车型
         self.driver.find_element(By.ID,"_easyui_combobox_i10_2").click()
         self.driver.find_element(By.ID,"addSave").click()       #保存
@@ -86,8 +84,5 @@ class TestLogin:
         sleep(3)
         self.driver.find_element(By.CSS_SELECTOR,'#editList > a:nth-child(8) > span').click()       #同意
         self.driver.find_element(By.CSS_SELECTOR, 'body > div.panel.window.messager-window > div.dialog-button.messager-button > a:nth-child(1)').click()
-
-
-
 
 
