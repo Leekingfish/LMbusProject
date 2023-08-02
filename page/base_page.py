@@ -30,6 +30,16 @@ class BasePage:
     _locat_iframe = (By.CSS_SELECTOR,"#tabPages > div.tabs-panels.tabs-panels-noborder.panel-noscroll > div:nth-child(2) > div > iframe")
     _locat_purchase_type = (By.CSS_SELECTOR, 'li:nth-child(10) .textbox.combo .textbox-addon.textbox-addon-right')
     _locat_purchase_choose = (By.ID, "purchaseType_easyui_combobox_i6_2")
+    """
+    下拉框选项
+    purchaseType_easyui_combobox_i6_1 : 国废采购
+    purchaseType_easyui_combobox_i6_2 : 竹木采购
+    purchaseType_easyui_combobox_i6_3 : 煤炭采购
+    purchaseType_easyui_combobox_i6_4 : 木粉采购
+    purchaseType_easyui_combobox_i6_5 : 木浆采购
+    purchaseType_easyui_combobox_i6_6 : 辅料采购
+    purchaseType_easyui_combobox_i6_7 : 燃料采购
+    """
     _locat_vendor = (By.ID, '_easyui_textbox_input15')
     _locat_delivery_date = (By.CSS_SELECTOR, '#saveForm > ul > li:nth-child(8) > span > span')
     _locat_delivery_date_choose = (
@@ -77,16 +87,7 @@ class BasePage:
         self.driver.switch_to.frame(iframe)
         self.find(self._locat_purchase_type).click()  # 选择采购类型
         self.find(self._locat_purchase_choose).click()
-        """
-        下拉框选项
-        purchaseType_easyui_combobox_i6_1 : 国废采购
-        purchaseType_easyui_combobox_i6_2 : 竹木采购
-        purchaseType_easyui_combobox_i6_3 : 煤炭采购
-        purchaseType_easyui_combobox_i6_4 : 木粉采购
-        purchaseType_easyui_combobox_i6_5 : 木浆采购
-        purchaseType_easyui_combobox_i6_6 : 辅料采购
-        """
-        self.find(self._locat_vendor).send_keys("0133")  # 选择供应商
+        self.find(self._locat_vendor).send_keys("0309")  # 选择供应商
         sleep(1)
         self.find(self._locat_delivery_date).click()  # 送货日期
         self.find(self._locat_delivery_date_choose).click()
