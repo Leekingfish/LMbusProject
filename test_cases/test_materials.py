@@ -7,8 +7,7 @@ class TestDeliveryBooking:
 
     def test_delivery_booking(self):
         """
-        送货预约
+        料品信息维护
         :return:
         """
-        self.main.goto_purchase_management().delivery_booking_auxi()
-
+        self.main.goto_commodity_infor().commodityInfor()

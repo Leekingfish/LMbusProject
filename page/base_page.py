@@ -8,6 +8,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 
 
 class BasePage:
+
     _locat_usename = (By.ID, "_easyui_textbox_input1")
     _locat_pwd = (By.ID, "_easyui_textbox_input2")
     _locat_orgcode = (By.CSS_SELECTOR,"[style='margin-bottom:20px']:nth-child(3) .textbox-addon.textbox-addon-right")
@@ -27,9 +28,9 @@ class BasePage:
     _locat_Language = (By.ID, "_easyui_textbox_input4")
     _locat_chooseLanguage = (By.CSS_SELECTOR,'.combobox-item.combobox-item-selected[id="chooseLanguage_easyui_combobox_i3_0"]')
     _locat_login = (By.ID, "btnLogin")
-    _locat_iframe = (By.CSS_SELECTOR,"#tabPages > div.tabs-panels.tabs-panels-noborder.panel-noscroll > div:nth-child(2) > div > iframe")
+    _locat_iframe = (By.CSS_SELECTOR,"#tabPages > div.tabs-panels.tabs-panels-noborder.panel-noscroll > div:nth-child(3) > div > iframe")
     _locat_purchase_type = (By.CSS_SELECTOR, 'li:nth-child(10) .textbox.combo .textbox-addon.textbox-addon-right')
-    _locat_purchase_choose = (By.ID, "purchaseType_easyui_combobox_i6_2")
+    _locat_purchase_choose = (By.ID, "purchaseType_easyui_combobox_i6_6")
     """
     下拉框选项
     purchaseType_easyui_combobox_i6_1 : 国废采购
@@ -87,7 +88,7 @@ class BasePage:
         self.driver.switch_to.frame(iframe)
         self.find(self._locat_purchase_type).click()  # 选择采购类型
         self.find(self._locat_purchase_choose).click()
-        self.find(self._locat_vendor).send_keys("0309")  # 选择供应商
+        self.find(self._locat_vendor).send_keys("BANBGX0003")  # 选择供应商
         sleep(1)
         self.find(self._locat_delivery_date).click()  # 送货日期
         self.find(self._locat_delivery_date_choose).click()

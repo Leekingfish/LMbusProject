@@ -1,0 +1,33 @@
+_easyui_combobox_i32_0  :   ADMT
+_easyui_combobox_i32_1  :   BDMT
+_easyui_combobox_i32_2  :   袋
+_easyui_combobox_i32_3  :   包
+_easyui_combobox_i32_4  :   盒
+_easyui_combobox_i32_5  :   柜
+_easyui_combobox_i32_6  :   天
+_easyui_combobox_i32_7  :   台
+_easyui_combobox_i32_8  :   个
+_easyui_combobox_i32_9  :   根
+_easyui_combobox_i32_10 :   英寸
+_easyui_combobox_i32_11 :   卷
+_easyui_combobox_i32_12 :   公斤
+_easyui_combobox_i32_13 :   kw.h
+_easyui_combobox_i32_14 :   升
+_easyui_combobox_i32_15 :   米
+_easyui_combobox_i32_16 :   平方米
+_easyui_combobox_i32_17 :   立方
+_easyui_combobox_i32_18 :   毫米
+_easyui_combobox_i32_19 :   公吨
+_easyui_combobox_i32_20 :   瓶
+_easyui_combobox_i32_21 :   块
+_easyui_combobox_i32_22 :   扎
+_easyui_combobox_i32_23 :   条
+_easyui_combobox_i32_24 :   张
+_easyui_combobox_i32_25 :   票
+_easyui_combobox_i32_26 :   短吨
+_easyui_combobox_i32_27 :   套
+_easyui_combobox_i32_28 :   桶
+_easyui_combobox_i32_29 :   元
+_easyui_combobox_i32_30 :   支
+
+
