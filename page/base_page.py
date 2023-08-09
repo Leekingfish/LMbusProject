@@ -30,7 +30,7 @@ class BasePage:
     _locat_login = (By.ID, "btnLogin")
     _locat_iframe = (By.CSS_SELECTOR,"#tabPages > div.tabs-panels.tabs-panels-noborder.panel-noscroll > div:nth-child(3) > div > iframe")
     _locat_purchase_type = (By.CSS_SELECTOR, 'li:nth-child(10) .textbox.combo .textbox-addon.textbox-addon-right')
-    _locat_purchase_choose = (By.ID, "purchaseType_easyui_combobox_i6_6")
+    _locat_purchase_choose = (By.ID, "purchaseType_easyui_combobox_i6_2")
     """
     下拉框选项
     purchaseType_easyui_combobox_i6_1 : 国废采购
@@ -88,7 +88,7 @@ class BasePage:
         self.driver.switch_to.frame(iframe)
         self.find(self._locat_purchase_type).click()  # 选择采购类型
         self.find(self._locat_purchase_choose).click()
-        self.find(self._locat_vendor).send_keys("BANBGX0003")  # 选择供应商
+        self.find(self._locat_vendor).send_keys("0309")  # 选择供应商
         sleep(1)
         self.find(self._locat_delivery_date).click()  # 送货日期
         self.find(self._locat_delivery_date_choose).click()

@@ -19,7 +19,7 @@ class DeliveryBooking(BasePage):
     _locat_quantity = (By.CSS_SELECTOR, '[field="quantity"] .textbox-text.validatebox-text.eaf-validate-required')
     _locat_deliveryCarType = (By.CSS_SELECTOR,'[field="deliveryCarType"] .textbox-addon.textbox-addon-right')
     _locat_deliveryCarType_choose = (By.ID, "_easyui_combobox_i10_2")
-    _locat_seve = (By.ID, "addSave")
+    _locat_save = (By.ID, "addSave")
     _locat_submit = (By.CSS_SELECTOR,'#editList > a:nth-child(7)')
     _locat_tip_window = (By.CSS_SELECTOR,'body > div.panel.window.messager-window > div.dialog-button.messager-button > a:nth-child(1)')
     _locat_accept = (By.CSS_SELECTOR,'#editList > a:nth-child(8) > span')
@@ -39,7 +39,7 @@ class DeliveryBooking(BasePage):
         self.find(self._locat_quantity).send_keys("5")  # 吨数
         self.find(self._locat_deliveryCarType).click()  # 选择车型
         self.find(self._locat_deliveryCarType_choose).click()
-        self.find(self._locat_seve).click()  # 保存
+        self.find(self._locat_save).click()  # 保存
         sleep(5)
         self.find(self._locat_submit).click()  # 提交
         self.find(self._locat_tip_window).click()
@@ -65,7 +65,7 @@ class DeliveryBooking(BasePage):
         self.find(self._locat_quantity).send_keys("1000")  # 吨数
         self.find(self._locat_deliveryCarType).click()  # 选择车型
         self.find(self._locat_deliveryCarType_choose).click()
-        self.find(self._locat_seve).click()  # 保存
+        self.find(self._locat_save).click()  # 保存
         sleep(5)
         self.find(self._locat_submit).click()  # 提交
         self.find(self._locat_tip_window).click()
@@ -88,7 +88,7 @@ class DeliveryBooking(BasePage):
         self.find(self._locat_quantity).send_keys("5")  # 吨数
         self.find(self._locat_deliveryCarType).click()  # 选择车型
         self.find(self._locat_deliveryCarType_choose).click()
-        self.find(self._locat_seve).click()  # 保存
+        self.find(self._locat_save).click()  # 保存
         sleep(5)
         self.find(self._locat_submit).click()  # 提交
         self.find(self._locat_tip_window).click()
