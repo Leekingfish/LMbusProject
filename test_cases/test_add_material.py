@@ -10,4 +10,4 @@ class TestDeliveryBooking:
         料品信息维护
         :return:
         """
-        self.main.goto_commodity_infor().commodityInfor()
+        self.main.goto_materialsPage().commodityInfor()

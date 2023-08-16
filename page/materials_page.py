@@ -13,23 +13,23 @@ class MaterialsPage(BasePage):
     _locat_unit = (By.CSS_SELECTOR,'.tabs li:nth-child(2)')
     _locat_commodityUnit1 = (By.CSS_SELECTOR,'#datagrid-row-r13-2-0 [field="commodityUnit"]')
     _locat_commodityUnit1_right = (By.CSS_SELECTOR,'#datagrid-row-r13-2-0 .textbox-addon.textbox-addon-right')
-    _locat_commodityUnit1_choose = (By.ID,"_easyui_combobox_i32_12")
+    _locat_commodityUnit1_choose = (By.ID,"_easyui_combobox_i32_11")
     _locat_conversionRate1 = (By.CSS_SELECTOR,'#datagrid-row-r13-2-0 [field="conversionRate"] .textbox-text.validatebox-text.textbox-prompt')
     _locat_commodityUnit2 = (By.CSS_SELECTOR,'#datagrid-row-r13-2-1 [field="commodityUnit"]')
     _locat_commodityUnit2_right = (By.CSS_SELECTOR, '#datagrid-row-r13-2-1 .textbox-addon.textbox-addon-right')
-    _locat_commodityUnit2_choose = (By.ID, "_easyui_combobox_i34_12")
+    _locat_commodityUnit2_choose = (By.ID, "_easyui_combobox_i34_11")
     _locat_conversionRate2 = (By.CSS_SELECTOR, '#datagrid-row-r13-2-1 [field="conversionRate"] .textbox-text.validatebox-text.textbox-prompt')
     _locat_commodityUnit3 = (By.CSS_SELECTOR,'#datagrid-row-r13-2-2 [field="commodityUnit"]')
     _locat_commodityUnit3_right = (By.CSS_SELECTOR, '#datagrid-row-r13-2-2 .textbox-addon.textbox-addon-right')
-    _locat_commodityUnit3_choose = (By.ID, "_easyui_combobox_i36_12")
+    _locat_commodityUnit3_choose = (By.ID, "_easyui_combobox_i36_11")
     _locat_conversionRate3 = (By.CSS_SELECTOR,'#datagrid-row-r13-2-2 [field="conversionRate"] .textbox-text.validatebox-text.textbox-prompt')
     _locat_commodityUnit4 = (By.CSS_SELECTOR,'#datagrid-row-r13-2-3 [field="commodityUnit"]')
     _locat_commodityUnit4_right = (By.CSS_SELECTOR, '#datagrid-row-r13-2-3 .textbox-addon.textbox-addon-right')
-    _locat_commodityUnit4_choose = (By.ID, "_easyui_combobox_i38_12")
+    _locat_commodityUnit4_choose = (By.ID, "_easyui_combobox_i38_11")
     _locat_conversionRate4 = (By.CSS_SELECTOR,'#datagrid-row-r13-2-3 [field="conversionRate"] .textbox-text.validatebox-text.textbox-prompt')
     _locat_commodityUnit5 = (By.CSS_SELECTOR,'#datagrid-row-r13-2-4 [field="commodityUnit"]')
     _locat_commodityUnit5_right = (By.CSS_SELECTOR, '#datagrid-row-r13-2-4 .textbox-addon.textbox-addon-right')
-    _locat_commodityUnit5_choose = (By.ID, "_easyui_combobox_i40_12")
+    _locat_commodityUnit5_choose = (By.ID, "_easyui_combobox_i40_11")
     _locat_conversionRate5 = (By.CSS_SELECTOR,'#datagrid-row-r13-2-4 [field="conversionRate"] .textbox-text.validatebox-text.textbox-prompt')
     _locat_commodityType = (By.CSS_SELECTOR, '.tabs li:nth-child(4)')
     _locat_commodityTypeAdd = (By.CSS_SELECTOR,'.panel:nth-child(4) .datagrid-toolbar td:nth-child(1)')
@@ -57,9 +57,9 @@ class MaterialsPage(BasePage):
     _locat_supplierCode = (By.ID,"_easyui_textbox_input88")
     _locat_standardWeight = (By.ID,'_easyui_textbox_input89')
     _locat_primaryUnitCode = (By.CSS_SELECTOR,'[field="primaryUnitCode"] .textbox-icon.combo-arrow')
-    _locat_primaryUnitCode_choose = (By.ID,"_easyui_combobox_i29_3")
+    _locat_primaryUnitCode_choose = (By.ID,"_easyui_combobox_i28_12")
     _locat_secondaryUnitCode = (By.CSS_SELECTOR,'[field="secondaryUnitCode"] .textbox-icon.combo-arrow')
-    _locat_secondaryUnitCode_choose = (By.ID,"_easyui_combobox_i30_4")
+    _locat_secondaryUnitCode_choose = (By.ID,"_easyui_combobox_i29_12")
     _locat_tareWeight = (By.ID,'_easyui_textbox_input92')
     _locat_palletRate = (By.ID,'_easyui_textbox_input93')
     _locat_palletWeight = (By.ID,'_easyui_textbox_input94')
@@ -75,10 +75,10 @@ class MaterialsPage(BasePage):
         """
         iframe = self.find(self._locat_iframe)
         self.driver.switch_to.frame(iframe)
-        self.find(self._locat_commodityCode).send_keys("Q123")      #料品编码
-        self.find(self._locat_commodityCnName).send_keys("12")      #料品名称
-        self.find(self._locat_commodityEnName).send_keys("12")      #料品简称
-        self.find(self._locat_commoditySpecification).send_keys("1234")     #规格
+        self.find(self._locat_commodityCode).send_keys("HHAA042")      #料品编码
+        self.find(self._locat_commodityCnName).send_keys("消泡劑")      #料品名称
+        self.find(self._locat_commodityEnName).send_keys("消泡劑")      #料品简称
+        self.find(self._locat_commoditySpecification).send_keys("消泡劑 型號:5550")     #规格
         """
         计量单位
         """
@@ -112,10 +112,10 @@ class MaterialsPage(BasePage):
         self.find(self._locat_classifyAttribution_choose).click()
         self.find(self._locat_commodityTypeCode).send_keys("COMMODITY_KIND")        #主分类
         sleep(1)
-        self.find(self._locat_oneClassifyCode).send_keys("B")       #一级分类
+        self.find(self._locat_oneClassifyCode).send_keys("S")       #一级分类
         sleep(1)
-        self.find(self._locat_secondeClassifyCode).send_keys("B-SW")        #二级分类
-        sleep(1)
+        # self.find(self._locat_secondeClassifyCode).send_keys("B-SW")        #二级分类
+        # sleep(1)
         # self.find(self._locat_thirdClassifyCode).send_keys("")      #三级分类
         # self.find(self._locat_fourthClassifyCode).send_keys("")     #四级分类
         self.find(self._locat_commodityTypeAdd).click()
@@ -125,29 +125,34 @@ class MaterialsPage(BasePage):
         sleep(1)
         self.find(self._locat_commodityTypeCode2).send_keys("PURCHASE_TYPE")
         sleep(1)
-        self.find(self._locat_oneClassifyCode2).send_keys("B")
+        self.find(self._locat_oneClassifyCode2).send_keys("S")
         sleep(1)
-        self.find(self._locat_secondeClassifyCode2).send_keys("B-SW")
+        self.find(self._locat_secondeClassifyCode2).send_keys("S-HH")
         sleep(1)
         """
         管理维度
         """
         self.find(self._locat_commodityPapersize).click()
-        self.find(self._locat_commodityPapersize_choose).click()        #明细选择
+        # self.find(self._locat_commodityPapersize_choose).click()        #明细选择
+        # sleep(1)
+        # self.find(self._locat_commodityPapersizeRemove).click()     #删除
+        """
+        新增包装规格
+        """
+        self.find(self._locat_manageDimensionType).click()          #类型
+        self.find(self._locat_manageDimensionType_choose).click()
+        self.find(self._locat_supplierCode).send_keys("ZYSZ621")     #供应商
+        self.find(self._locat_standardWeight).send_keys("200")         #标准重
+        self.find(self._locat_primaryUnitCode).click()          #库存主单位
         sleep(1)
-        self.find(self._locat_commodityPapersizeRemove).click()     #删除
-        # self.find(self._locat_manageDimensionType).click()          #类型
-        # self.find(self._locat_manageDimensionType_choose).click()
-        # self.find(self._locat_supplierCode).send_keys("BANBGX0003")     #供应商
-        # self.find(self._locat_standardWeight).send_keys("1000")         #标准重
-        # self.find(self._locat_primaryUnitCode).click()          #库存主单位
-        # self.find(self._locat_primaryUnitCode_choose).click()
-        # self.find(self._locat_secondaryUnitCode).click()            #库存辅单位
-        # self.find(self._locat_secondaryUnitCode_choose).click()
-        # self.find(self._locat_tareWeight).send_keys("0")        #皮重
-        # self.find(self._locat_palletRate).send_keys("0")        #卡板比例
-        # self.find(self._locat_palletWeight).send_keys("0")      #卡板重
-        # self.find(self._locat_toleranceRange).send_keys("0")        #超差范围
+        self.find(self._locat_primaryUnitCode_choose).click()
+        self.find(self._locat_secondaryUnitCode).click()            #库存辅单位
+        sleep(1)
+        self.find(self._locat_secondaryUnitCode_choose).click()
+        self.find(self._locat_tareWeight).send_keys("0")        #皮重
+        self.find(self._locat_palletRate).send_keys("0")        #卡板比例
+        self.find(self._locat_palletWeight).send_keys("0")      #卡板重
+        self.find(self._locat_toleranceRange).send_keys("0")        #超差范围
         self.find(self._locat_save).click()       #保存
         self.find(self._locat_submit).click()     #提交
         self.find(self._locat_accept).click()     #同意
