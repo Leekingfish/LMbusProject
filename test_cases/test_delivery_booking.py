@@ -10,5 +10,5 @@ class TestDeliveryBooking:
         送货预约
         :return:
         """
-        self.main.goto_purchase_management().delivery_booking_locc()
+        self.main.goto_purchase_management().delivery_booking_banb()
 

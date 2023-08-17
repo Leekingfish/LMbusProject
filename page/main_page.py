@@ -14,7 +14,7 @@ class MainPage(BasePage):
     _locat_commodityManagement = (By.CSS_SELECTOR, '.system.float_r[title="料品管理"]')
     _locat_materialsPage = (By.CSS_SELECTOR, '.system_setting.middle_left[title="料品信息维护"]')
     _locat_supplier = (By.CSS_SELECTOR,'.system.float_r[title="供应商"]')
-    _locat_supplierInfor = (By.CSS_SELECTOR,'system_setting middle_left[title="供应商信息"]')
+    _locat_supplierInfor = (By.CSS_SELECTOR,'.system_setting.middle_left[title="供应商信息"]')
 
 
     def goto_purchase_management(self):

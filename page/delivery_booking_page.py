@@ -18,7 +18,7 @@ class DeliveryBooking(BasePage):
     _locat_packQuantity = (By.CSS_SELECTOR,'[field="packQuantity"] .textbox-text.validatebox-text.eaf-validate-required')
     _locat_quantity = (By.CSS_SELECTOR, '[field="quantity"] .textbox-text.validatebox-text.eaf-validate-required')
     _locat_deliveryCarType = (By.CSS_SELECTOR,'[field="deliveryCarType"] .textbox-addon.textbox-addon-right')
-    _locat_deliveryCarType_choose = (By.ID, "_easyui_combobox_i12_2")
+    _locat_deliveryCarType_choose = (By.ID, "_easyui_combobox_i10_2")
     _locat_save = (By.ID, "addSave")
     _locat_submit = (By.CSS_SELECTOR,'#editList > a:nth-child(7)')
     _locat_tip_window = (By.CSS_SELECTOR,'body > div.panel.window.messager-window > div.dialog-button.messager-button > a:nth-child(1)')
@@ -44,7 +44,7 @@ class DeliveryBooking(BasePage):
         self.find(self._locat_originCode_choose).click()
         self.find(self._locat_commodityCode).send_keys("ZD0005")  # 选择料号
         sleep(1)
-        self.find(self._locat_carNumber).send_keys("1")  # 车数
+        self.find(self._locat_carNumber).send_keys("2")  # 车数
         self.find(self._locat_quantity).send_keys("5")  # 吨数
         self.find(self._locat_deliveryCarType).click()  # 选择车型
         self.find(self._locat_deliveryCarType_choose).click()
