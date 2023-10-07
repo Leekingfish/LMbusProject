@@ -19,7 +19,7 @@ class SupplierPage(BasePage):
     _locat_address = (By.ID,"_easyui_textbox_input12")
     _locat_itermTitle = (By.CSS_SELECTOR,'.tabs-wrap li:nth-child(2)')
     _locat_tradeTermCode = (By.CSS_SELECTOR,'[field="tradeTermCode"] .textbox-addon.textbox-addon-right')
-    _locat_tradeTermCode_choose = (By.ID,"_easyui_combobox_i17_2")
+    _locat_tradeTermCode_choose = (By.ID,"_easyui_combobox_i16_2")
     _locat_paymentType = (By.CSS_SELECTOR,'[field="paymentType"] .textbox-addon.textbox-addon-right')
     _locat_paymentType_choose = (By.ID,"datagrid-row-r26-1-0")
     _locat_paymentTerm = (By.CSS_SELECTOR,'[field="paymentTerm"] .textbox-addon.textbox-addon-right')
@@ -27,13 +27,24 @@ class SupplierPage(BasePage):
     _locat_currencyCode = (By.CSS_SELECTOR,'[field="currencyCode"] .textbox-addon.textbox-addon-right')
     _locat_currencyCode_choose = (By.ID,"datagrid-row-r28-1-0")
     _locat_billingUnitCode = (By.CSS_SELECTOR,'[field="billingUnitCode"] .textbox-addon.textbox-addon-right')
-    _locat_billingUnitCode_choose = (By.ID,'_easyui_combobox_i63_3')
+    _locat_billingUnitCode_choose = (By.ID,'_easyui_combobox_i17_3')
     _locat_taxScheduleCode = (By.ID,'_easyui_textbox_input47')
-    _locat_effectiveDate = (By.ID,"_easyui_textbox_input50")
-    _locat_effectiveDate_enter = (By.CSS_SELECTOR,'[field="effectiveDate"] .textbox-addon.textbox-addon-right')
-    _locat_expirationDate = (By.ID,"_easyui_textbox_input51")
-    _locat_expirationDate_enter = (By.CSS_SELECTOR,'[field="expirationDate"] .textbox-addon.textbox-addon-right')
-
+    _locat_iterm_effectiveDate = (By.ID,"_easyui_textbox_input50")
+    _locat_iterm_effectiveDate_enter = (By.CSS_SELECTOR,'#datagrid-row-r20-2-0 [field="effectiveDate"] .textbox-addon.textbox-addon-right')
+    _locat_iterm_expirationDate = (By.ID,"_easyui_textbox_input51")
+    _locat_iterm_expirationDate_enter = (By.CSS_SELECTOR,'#datagrid-row-r20-2-0 [field="expirationDate"] .textbox-addon.textbox-addon-right')
+    _locat_contactTitle = (By.CSS_SELECTOR,'.tabs-wrap li:nth-child(3)')
+    _locat_contactName = (By.ID,"_easyui_textbox_input52")
+    _locat_positionDesc = (By.ID,"_easyui_textbox_input53")
+    _locat_mobilNo = (By.ID,"_easyui_textbox_input54")
+    _locat_telNo = (By.ID,"_easyui_textbox_input55")
+    _locat_faxNo = (By.ID,"_easyui_textbox_input56")
+    _locat_email = (By.CSS_SELECTOR,'[field="email"] .datagrid-editable-input.validatebox-text')
+    _locat_contact_effectiveDate = (By.ID,"_easyui_textbox_input57")
+    _locat_contact_effectiveDate_enter = (By.CSS_SELECTOR, '#datagrid-row-r21-2-0 [field="effectiveDate"] .textbox-icon.combo-arrow')
+    _locat_contact_expirationDate = (By.ID,"_easyui_textbox_input58")
+    _locat_contact_expirationDate_enter = (By.CSS_SELECTOR, '#datagrid-row-r21-2-0 [field="expirationDate"] .textbox-addon.textbox-addon-right')
+    _locat_band = (By.CSS_SELECTOR, '.tabs-wrap li:nth-child(4)')
 
     def supplierInfor(self):
         """
@@ -68,20 +79,37 @@ class SupplierPage(BasePage):
         """
         条款信息
         """
-        self.find(self._locat_itermTitle).click()       #条款信息
-        self.find(self._locat_tradeTermCode).click()        #贸易条件
-        self.find(self._locat_tradeTermCode_choose).click()
-        self.find(self._locat_paymentType).click()      #结算方式
-        self.find(self._locat_paymentType_choose).click()
-        self.find(self._locat_paymentTerm).click()          #结算条件
-        self.find(self._locat_paymentTerm_choose).click()
-        self.find(self._locat_currencyCode).click()         #币种
-        self.find(self._locat_currencyCode_choose).click()
-        self.find(self._locat_billingUnitCode).click()          #计量单位
-        self.find(self._locat_billingUnitCode_choose).click()
-        self.find(self._locat_taxScheduleCode).send_keys("VT13")        #税别
-        self.find(self._locat_effectiveDate).send_keys("2023年08月17日")          #生效时间
-        self.find(self._locat_effectiveDate_enter).click()
-        self.find(self._locat_expirationDate).send_keys("2033年08月17日")         #失效时间
-        self.find(self._locat_expirationDate_enter).click()
+        # self.find(self._locat_itermTitle).click()       #条款信息
+        # self.find(self._locat_tradeTermCode).click()        #贸易条件
+        # self.find(self._locat_tradeTermCode_choose).click()
+        # self.find(self._locat_paymentType).click()      #结算方式
+        # self.find(self._locat_paymentType_choose).click()
+        # self.find(self._locat_paymentTerm).click()          #结算条件
+        # self.find(self._locat_paymentTerm_choose).click()
+        # self.find(self._locat_currencyCode).click()         #币种
+        # self.find(self._locat_currencyCode_choose).click()
+        # self.find(self._locat_billingUnitCode).click()          #计量单位
+        # self.find(self._locat_billingUnitCode_choose).click()
+        # self.find(self._locat_taxScheduleCode).send_keys("VT13")        #税别
+        # self.find(self._locat_iterm_effectiveDate).send_keys("2023年08月17日")          #生效时间
+        # self.find(self._locat_iterm_effectiveDate_enter).click()
+        # self.find(self._locat_iterm_expirationDate).send_keys("2033年08月17日")         #失效时间
+        # self.find(self._locat_iterm_expirationDate_enter).click()
+        """
+        联系人信息
+        """
+        self.find(self._locat_contactTitle).click()         #联系人信息
+        self.find(self._locat_contactName).send_keys("1")        #姓名
+        self.find(self._locat_positionDesc).send_keys("1")       #职位
+        self.find(self._locat_mobilNo).send_keys("1")            #手机
+        self.find(self._locat_telNo).send_keys("1")          #联系电话
+        self.find(self._locat_faxNo).send_keys("1")          #传真号码
+        self.find(self._locat_email).send_keys("1")          #邮箱
+        self.find(self._locat_contact_effectiveDate).send_keys("2023年08月17日")          #生效时间
+        self.find(self._locat_contact_effectiveDate_enter).click()
+        self.find(self._locat_contact_expirationDate).send_keys("2023年08月17日")         #失效时间
+        self.find(self._locat_contact_expirationDate_enter).click()
+
+
+
 

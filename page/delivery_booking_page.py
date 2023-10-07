@@ -6,7 +6,7 @@ class DeliveryBooking(BasePage):
 
     _locat_add_details = (By.CSS_SELECTOR, '.datagrid-toolbar td:nth-child(1)')
     _locat_purchaseOrder = (By.CSS_SELECTOR,'[field="purchaseOrder"] .textbox-addon.textbox-addon-right')
-    _locat_purchaseOrder_chosse = (By.ID, "datagrid-row-r14-1-2")
+    _locat_purchaseOrder_chosse = (By.ID, "datagrid-row-r14-1-1")
     _locat_purchaseId = (By.CSS_SELECTOR,'[field="purchaseId"] .textbox-addon.textbox-addon-right')
     _locat_purchaseId_chosse = (By.ID, 'datagrid-row-r15-1-0')
     _locat_originCode = (By.CSS_SELECTOR,'[field="originCode"] .textbox-addon.textbox-addon-right')
@@ -45,7 +45,7 @@ class DeliveryBooking(BasePage):
         self.find(self._locat_commodityCode).send_keys("ZD0005")  # 选择料号
         sleep(1)
         self.find(self._locat_carNumber).send_keys("2")  # 车数
-        self.find(self._locat_quantity).send_keys("5")  # 吨数
+        self.find(self._locat_quantity).send_keys("10")  # 吨数
         self.find(self._locat_deliveryCarType).click()  # 选择车型
         self.find(self._locat_deliveryCarType_choose).click()
         self.find(self._locat_save).click()  # 保存
@@ -93,7 +93,7 @@ class DeliveryBooking(BasePage):
         self.find(self._locat_purchaseOrder_chosse).click()
         self.find(self._locat_purchaseId).click()  # 选择采购员
         self.find(self._locat_purchaseId_chosse).click()
-        self.find(self._locat_carNumber).send_keys("1")  # 车数
+        self.find(self._locat_carNumber).send_keys("2")  # 车数
         self.find(self._locat_quantity).send_keys("5")  # 吨数
         self.find(self._locat_deliveryCarType).click()  # 选择车型
         self.find(self._locat_deliveryCarType_choose).click()

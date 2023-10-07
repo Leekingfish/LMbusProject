@@ -1,7 +1,7 @@
 from time import sleep
-
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+
 from selenium.webdriver.remote.webdriver import WebDriver
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
@@ -88,7 +88,7 @@ class BasePage:
         self.driver.switch_to.frame(iframe)
         self.find(self._locat_purchase_type).click()  # 选择采购类型
         self.find(self._locat_purchase_choose).click()
-        self.find(self._locat_vendor).send_keys("0309")  # 选择供应商
+        self.find(self._locat_vendor).send_keys("0133")  # 选择供应商
         sleep(1)
         self.find(self._locat_delivery_date).click()  # 送货日期
         self.find(self._locat_delivery_date_choose).click()
