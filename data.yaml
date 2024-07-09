@@ -1,14 +1,1 @@
-- domain: lmbusuat.leemanpaper.com
-  httpOnly: false
-  name: route
-  path: /
-  sameSite: Lax
-  secure: false
-  value: 40526bc55904622f6dfedac4c70b31b2
-- domain: lmbusuat.leemanpaper.com
-  httpOnly: false
-  name: route
-  path: /main
-  sameSite: Lax
-  secure: false
-  value: 40526bc55904622f6dfedac4c70b31b2
+

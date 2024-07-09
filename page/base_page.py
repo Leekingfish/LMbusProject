@@ -1,7 +1,7 @@
 from time import sleep
 from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
-
 from selenium.webdriver.remote.webdriver import WebDriver
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
@@ -40,6 +40,8 @@ class BasePage:
     purchaseType_easyui_combobox_i6_5 : 木浆采购
     purchaseType_easyui_combobox_i6_6 : 辅料采购
     purchaseType_easyui_combobox_i6_7 : 燃料采购
+    purchaseType_easyui_combobox_i6_9 : 木料采购
+    purchaseType_easyui_combobox_i6_11 : 五金采购
     """
     _locat_vendor = (By.ID, '_easyui_textbox_input15')
     _locat_delivery_date = (By.CSS_SELECTOR, '#saveForm > ul > li:nth-child(8) > span > span')
@@ -53,18 +55,20 @@ class BasePage:
         base_driver : WebDriver
         if base_driver is None:
             option = webdriver.ChromeOptions()
+            # option.debugger_address = "127.0.0.1:9222"
             option.add_experimental_option("detach", True)  # 不自动关闭浏览器
             self.driver = webdriver.Chrome(options=option)
+            # self.driver = webdriver.Edge()
             self.driver.maximize_window()
-            self.driver.get("http://lmbusuat.leemanpaper.com/main/login.html")
+            self.driver.get("http://lmbussit.leemanpaper.com/main/login.html")          #sit环境
+            # self.driver.get("http://lmbusuat.leemanpaper.com/main/login.html")          #uat环境
             self.driver.implicitly_wait(5)
-            self.find(self._locat_usename).send_keys("LM032451")
-            self.find(self._locat_pwd).send_keys("L123456")
-            self.find(self._locat_orgcode).click()
-            self.find(self._locat_chooseOrgcode).click()
-            self.find(self._locat_Language).click()
-            self.find(self._locat_chooseLanguage).click()
-            self.find(self._locat_login).click()
+            cookies = [{'domain': 'lmbussit.leemanpaper.com', 'httpOnly': False, 'name': 'sso_ticket', 'path': '/main',
+                        'sameSite': 'Lax', 'secure': False,
+                        'value': 'OTkxbzBucG8KWVozNjU3ODQKWVpHLVBNCjQwNTQzNTQwMDQ5NTYKN28zbjIwc241OG80NDhx'}]
+            for cookie in cookies:
+                self.driver.add_cookie(cookie)
+            self.driver.get("http://lmbussit.leemanpaper.com/main/index.html")
         else:
             self.driver = base_driver
 
@@ -86,9 +90,9 @@ class BasePage:
     def book_common(self):
         iframe = self.find(self._locat_iframe)
         self.driver.switch_to.frame(iframe)
-        self.find(self._locat_purchase_type).click()  # 选择采购类型
+        self.find(self._locat_purchase_type).click()     # 选择采购类型
         self.find(self._locat_purchase_choose).click()
-        self.find(self._locat_vendor).send_keys("0133")  # 选择供应商
+        self.find(self._locat_vendor).send_keys("0055")  # 选择供应商
         sleep(1)
         self.find(self._locat_delivery_date).click()  # 送货日期
         self.find(self._locat_delivery_date_choose).click()

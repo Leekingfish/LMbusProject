@@ -5,6 +5,7 @@ from page.base_page import BasePage
 
 
 class MaterialsPage(BasePage):
+
     _locat_iframe = (By.CSS_SELECTOR,"#tabPages > div.tabs-panels.tabs-panels-noborder.panel-noscroll > div:nth-child(3) > div > iframe")
     _locat_commodityCode = (By.ID,'_easyui_textbox_input4')
     _locat_commodityCnName = (By.ID,'_easyui_textbox_input5')
@@ -77,10 +78,10 @@ class MaterialsPage(BasePage):
         """
         iframe = self.find(self._locat_iframe)
         self.driver.switch_to.frame(iframe)
-        self.find(self._locat_commodityCode).send_keys("PBBXAF0011")      #料品编码
-        self.find(self._locat_commodityCnName).send_keys("漂白竹浆A")      #料品名称
-        self.find(self._locat_commodityEnName).send_keys("漂白竹浆A")      #料品简称
-        self.find(self._locat_commoditySpecification).send_keys("漂白竹浆A")     #规格
+        self.find(self._locat_commodityCode).send_keys("LM-BUOKP(W)")      #料品编码
+        self.find(self._locat_commodityCnName).send_keys("輕度氧脫本色竹漿(濕漿)")      #料品名称
+        self.find(self._locat_commodityEnName).send_keys("輕度氧脫本色竹漿(濕漿)")      #料品简称
+        self.find(self._locat_commoditySpecification).send_keys("輕度氧脫本色竹漿(濕漿)")     #规格
         """
         计量单位
         """
@@ -129,7 +130,7 @@ class MaterialsPage(BasePage):
         sleep(1)
         self.find(self._locat_oneClassifyCode2).send_keys("P")
         sleep(1)
-        self.find(self._locat_secondeClassifyCode2).send_keys("P-PB")
+        self.find(self._locat_secondeClassifyCode2).send_keys("LMBUKPO")
         sleep(1)
         """
         管理维度

@@ -5,7 +5,8 @@ from page.base_page import BasePage
 
 
 class SupplierPage(BasePage):
-    _locat_iframe = (By.CSS_SELECTOR,"#tabPages > div.tabs-panels.tabs-panels-noborder.panel-noscroll > div:nth-child(3) > div > iframe")
+    _locat_iframe_uat = (By.CSS_SELECTOR,"#tabPages > div.tabs-panels.tabs-panels-noborder.panel-noscroll > div:nth-child(3) > div > iframe")
+    # _locat_iframe = (By.CSS_SELECTOR,"#tabPages > div.tabs-panels.tabs-panels-noborder.panel-noscroll > div:nth-child(2) > div > iframe")
     _locat_supplierCode = (By.ID,"_easyui_textbox_input5")
     _locat_supplierName = (By.ID,"_easyui_textbox_input6")
     _locat_supplierShortName = (By.ID,"_easyui_textbox_input7")
@@ -76,20 +77,21 @@ class SupplierPage(BasePage):
         供应商信息
         :return:
         """
-        iframe = self.find(self._locat_iframe)
+        iframe = self.find(self._locat_iframe_uat)
         self.driver.switch_to.frame(iframe)
-        self.find(self._locat_supplierCode).send_keys("601")     #供应商编码
-        self.find(self._locat_supplierName).send_keys("测试")     #全称
-        self.find(self._locat_supplierShortName).send_keys("123")        #简称
+        self.find(self._locat_supplierCode).send_keys("BAMBJX0001")     #供应商编码
+        self.find(self._locat_supplierName).send_keys("瑞昌市永昌竹木有限公司")     #全称
+        self.find(self._locat_supplierShortName).send_keys("永昌")        #简称
         self.find(self._locat_supplierType).send_keys("竹木供应商")         #供应商类型
         self.find(self._locat_supplierType_choose).click()
         """
         基础信息
         """
-        self.find(self._locat_orderQuantityTolerance).send_keys("1")         #浮动比例
         self.find(self._locat_isAllowedSpotPurchase).click()        #是否允许现货
         sleep(1)
         self.find(self._locat_isAllowedSpotPurchase_choose).click()
+        self.find(self._locat_orderQuantityTolerance).send_keys("0")  # 浮动比例
+
         self.find(self._locat_countryCode).send_keys("CN")          #国家
         sleep(1)
         self.find(self._locat_countryName).send_keys("CN")          #原产国
@@ -102,7 +104,7 @@ class SupplierPage(BasePage):
         US	美国
         VN	越南民主共和国
         """
-        self.find(self._locat_address).send_keys("403 no found")        #详细地址
+        self.find(self._locat_address).send_keys("江西省九江市瑞昌市瑞民家园东侧门面第8间")        #详细地址
         """
         条款信息
         """
@@ -126,7 +128,7 @@ class SupplierPage(BasePage):
         联系人信息
         """
         self.find(self._locat_contactTitle).click()         #联系人信息
-        self.find(self._locat_contactName).send_keys("1")        #姓名
+        self.find(self._locat_contactName).send_keys("")        #姓名
         # self.find(self._locat_positionDesc).send_keys("1")       #职位
         # self.find(self._locat_mobilNo).send_keys("1")            #手机
         # self.find(self._locat_telNo).send_keys("1")          #联系电话
@@ -134,20 +136,20 @@ class SupplierPage(BasePage):
         # self.find(self._locat_email).send_keys("1")          #邮箱
         self.find(self._locat_contact_effectiveDate).send_keys("2023年08月17日")          #生效时间
         self.find(self._locat_contact_effectiveDate_enter).click()
-        self.find(self._locat_contact_expirationDate).send_keys("2029年08月17日")         #失效时间
+        self.find(self._locat_contact_expirationDate).send_keys("2033年08月17日")         #失效时间
         self.find(self._locat_contact_expirationDate_enter).click()
         """
         打包场信息
         """
         self.find(self._locat_siteTitle).click()        #打包场信息
-        self.find(self._locat_siteCode).click()         #打包场名称
-        self.find(self._locat_siteCode_choose).click()
-        # self.find(self._locat_siteType).click()         #打包场类型
-        # self.find(self._locat_siteType_choose).click()
-        self.find(self._locat_teamCode).click()         #团队名称
-        self.find(self._locat_teamCode_choose).click()
-        self.find(self._locat_buyer).click()            #采购员
-        self.find(self._locat_buyer_choose).click()
+        # self.find(self._locat_siteCode).click()         #打包场名称
+        # self.find(self._locat_siteCode_choose).click()
+        # # self.find(self._locat_siteType).click()         #打包场类型
+        # # self.find(self._locat_siteType_choose).click()
+        # self.find(self._locat_teamCode).click()         #团队名称
+        # self.find(self._locat_teamCode_choose).click()
+        # self.find(self._locat_buyer).click()            #采购员
+        # self.find(self._locat_buyer_choose).click()
         self.find(self._locat_site_effectiveDate).send_keys("2023年08月17日")          #生效时间
         self.find(self._locat_site_effectiveDate_enter).click()
         self.find(self._locat_site_expirationDate).send_keys("2029年10月17日")         #失效时间
@@ -172,9 +174,9 @@ class SupplierPage(BasePage):
         self.find(self._locat_buyTitleRemove).click()           #删除
 
         self.find(self._locat_save).click()         #保存
-        sleep(3)
-        self.find(self._locat_submit).click()       #提交
-        self.find(self._locat_tip_window).click()
-        sleep(3)
-        self.find(self._locat_accept).click()       #同意
-        self.find(self._locat_tip_window).click()
+        # sleep(3)
+        # self.find(self._locat_submit).click()       #提交
+        # self.find(self._locat_tip_window).click()
+        # sleep(3)
+        # self.find(self._locat_accept).click()       #同意
+        # self.find(self._locat_tip_window).click()
